@@ -31,6 +31,7 @@ export default function ProductForm({ onSubmit, editData }: Props) {
         onSubmit({ title, price: +price, description }, editData?.id)
         setTitle("")
         setPrice("")
+        setDescription("")
     }
 
     return (
@@ -46,6 +47,12 @@ export default function ProductForm({ onSubmit, editData }: Props) {
                     type="number"
                     value={price}
                     onChange={e => setPrice(e.target.value)}
+                />
+                <TextField
+                    label="Description"
+                    type="string"
+                    value={description}
+                    onChange={e => setDescription(e.target.value)}
                 />
                 <Button
                     variant="contained"
